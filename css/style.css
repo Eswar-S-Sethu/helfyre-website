@@ -5,15 +5,29 @@ body {
     padding: 0;
     color: #333;
 }
-
 .hero {
-    background: url('images/hero-bg.jpg') no-repeat center center/cover;
+    position: relative;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
     text-align: center;
+    overflow: hidden; /* Ensures the video stays within the hero area */
+    color: #fff;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video fills the container */
+    z-index: -1; /* Places the video behind the content */
+}
+
+.hero-content {
+    z-index: 1; /* Ensures content is above the video */
 }
 
 .hero-content h1 {
@@ -38,6 +52,7 @@ body {
 .hero-content .cta-button:hover {
     background: #ff6347;
 }
+
 
 .navbar {
     background: #333;
@@ -85,6 +100,57 @@ body {
 .game-card img {
     max-width: 100%;
     border-radius: 10px;
+}
+
+
+.newsletter-section {
+    padding: 50px 20px;
+    text-align: center;
+    background: #f8f9fa; /* Light background */
+    border-top: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+}
+
+.newsletter-section h2 {
+    font-size: 2.5em;
+    color: #333;
+}
+
+.newsletter-section p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.newsletter-section form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.newsletter-section input[type="email"] {
+    padding: 10px;
+    font-size: 1em;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.newsletter-section button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background: #ff4500;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.newsletter-section button:hover {
+    background: #ff6347;
 }
 
 footer {
