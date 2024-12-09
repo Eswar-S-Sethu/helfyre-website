@@ -90,17 +90,40 @@ body {
 }
 
 .game-card {
+    display: block; /* Make the card behave like a block element */
+    text-decoration: none; /* Remove default underline for links */
     background: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 15px;
-    max-width: 300px;
+    width: 250px; /* Fixed width for portrait style */
     text-align: center;
+    color: #333; /* Text color */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Add hover effect */
 }
 
 .game-card img {
-    max-width: 100%;
-    border-radius: 10px;
+    width: 100%; /* Ensure the image fills the card's width */
+    height: 320px; /* Fixed height for portrait style */
+    object-fit: cover; /* Maintain aspect ratio and crop excess parts */
+    border-radius: 10px; /* Add rounded corners */
+    display: block; /* Prevent inline spacing under images */
+}
+
+.game-card:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+.game-card h3 {
+    margin: 10px 0 5px;
+    font-size: 1.2em;
+}
+
+.game-card p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #666; /* Slightly lighter text color for the description */
 }
 
 
