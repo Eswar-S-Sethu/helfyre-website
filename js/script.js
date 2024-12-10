@@ -141,28 +141,3 @@ document.addEventListener("DOMContentLoaded", () => {
         camera.updateProjectionMatrix();
     });
 });
-
-document.getElementById("subscribeForm").addEventListener("submit", async function (e) {
-    e.preventDefault();
-    const email = document.getElementById("email").value;
-
-    try {
-        const response = await fetch("http://192.168.1.118:5000/subscribe", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ email }),
-        });
-
-        if (response.ok) {
-            alert("Subscription successful!");
-        } else {
-            const error = await response.json();
-            alert("Error: " + error.error);
-        }
-    } catch (err) {
-        print(err)
-        alert("Failed to connect to the subscription service.");
-    }
-});
