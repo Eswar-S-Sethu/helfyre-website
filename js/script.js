@@ -162,6 +162,7 @@ document.getElementById("subscribeForm").addEventListener("submit", async functi
             alert("Error: " + error.error);
         }
     } catch (err) {
+        print(err)
         alert("Failed to connect to the subscription service.");
     }
 });
